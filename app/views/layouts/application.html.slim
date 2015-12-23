@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title The Slash &amp Hyphen
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+  	header.navbar.navbar-fixed-top.navbar-inverse
+	  .container
+	    = link_to "The Slash & Hyphen", home_path
+	    nav
+	      ul.nav.navbar-nav.pull-right
+	        li= link_to "Home", users_dashboard_path
+
+
+    = yield
