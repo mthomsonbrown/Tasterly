@@ -6,3 +6,10 @@ center
     h2
         | It works now! 
         =current_user.email
+        
+    h3 
+        | Beers Added: 
+        - if current_user.beers.size == 0
+            | No beers added
+        - else
+            | Beers have been added
