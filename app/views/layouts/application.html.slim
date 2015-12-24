@@ -8,10 +8,15 @@ html
   body
   	header.navbar.navbar-fixed-top.navbar-inverse
 	  .container
-	    = link_to "Tasterly", home_path
+	    = link_to "Tasterly", home_path, id: "logo"
 	    nav
 	      ul.nav.navbar-nav.pull-right
-	        li= link_to "Userspace", dashboard_path
+	          - if user_signed_in?
+	              li= link_to "Dashboard", dashboard_path
+	              li= link_to "Log out", destroy_user_session_path, method: :delete
+	          - else
+	              li= link_to "Sign up", new_user_registration_path
+	              li= link_to "Log in", new_user_session_path
 
 
     = yield
