@@ -1,6 +1,6 @@
 class BeersController < ApplicationController
   def create
-    @beer = current_user.beers.create! params[:beer].permit(:name)
+    @beer = current_user.beers.create! params[:beer].permit(:name, :abv)
   end
   
   def destroy

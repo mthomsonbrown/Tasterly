@@ -7,6 +7,7 @@
             
     = link_to "Add a Beer", new_beer_path, class: "btn btn-lg btn-default pull-right"
     
+.container
     - if current_user.beers.size == 0
         center
             h3
@@ -15,5 +16,9 @@
     - else
         h3
             | Your Beers:
-            - current_user.beers.each do |beer|
-                li = beer.name
+            ul
+                - current_user.beers.each do |beer|
+                    .list-group-item
+                        = beer.name
+                        .text-right
+                            = beer.abv

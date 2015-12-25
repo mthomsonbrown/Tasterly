@@ -5,6 +5,6 @@ center
 .container      
     = bootstrap_form_for(@beer) do |f|
                 = f.text_field :name
-                = f.text_field :abv
-                = f.submit
+                = f.number_field :abv
+                = f.primary
     
