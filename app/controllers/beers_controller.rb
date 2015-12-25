@@ -11,7 +11,5 @@ class BeersController < ApplicationController
   
   def new
     @beer = current_user.beers.new name: "Duff"
-    @beerName = @beer.name
-    @user = current_user.email
   end
 end
