@@ -1,0 +1,15 @@
+center
+    h1
+        | In New Beer adding thingy!
+
+.container      
+    // form
+    //   .form-group
+    //     label name="beer[name]" for="beerNameInput"  Beer Name
+    //     input#beerNameInput.form-control placeholder="Duff"
+    //   button.btn.btn-default type="submit"  Submit
+    
+    = form_for(@beer) do |f|
+        = f.label :name
+        = f.text_field :name
+        = f.submit

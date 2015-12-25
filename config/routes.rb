@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'beers/name'
-
+  root 'index#home'
+  get 'home' => 'index#home'
+  
   devise_for :users
   get 'dashboard' => 'users#dashboard'
-  get 'home' => 'index#home'
-  root 'index#home'
-
+  
+  resources :beers
+  
 end
