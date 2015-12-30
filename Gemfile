@@ -17,6 +17,7 @@ gem 'bootstrap-sass'
 gem 'slim-rails'
 gem 'devise'
 gem 'bootstrap_form'
+gem 'bootstrap-slider-rails'
 
 group :development, :test do
   gem 'byebug'

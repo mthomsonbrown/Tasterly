@@ -1,10 +1,13 @@
-center
-    h1
-        | In New Beer adding thingy!
-
+center 
+    h1 Add Beer Data
 .container      
-    = bootstrap_form_for(@beer) do |f|
-                = f.text_field :name
-                = f.number_field :abv
-                = f.primary
-    
+    = bootstrap_form_for(@beer) do |b|
+        = b.text_field :name
+        = b.number_field :abv
+        h3
+            | Flavors:
+        = b.fields_for :flavors do |f|
+            = f.text_field :name
+            = f.number_field :rating, label: f.object[:name]
+        = b.primary
+                
