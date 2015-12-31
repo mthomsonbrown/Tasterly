@@ -7,7 +7,7 @@ center
         h3
             | Flavors:
         = b.fields_for :flavors do |f|
-            = f.text_field :name
+            = f.hidden_field :name
             = f.number_field :rating, label: f.object[:name]
         = b.primary
                 

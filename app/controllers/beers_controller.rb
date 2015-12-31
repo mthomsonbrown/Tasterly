@@ -7,12 +7,9 @@ class BeersController < ApplicationController
     @@flavorNames.each do |flavorName|
       @beer.flavors.build name: flavorName, rating: 0
     end
-    
-    @flavors = @beer.flavors
   end
 
   def create
-    puts "IN CREATEEEE"
     @beer = current_user.beers.create! beer_params
   end
   

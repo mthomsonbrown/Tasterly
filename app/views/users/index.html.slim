@@ -1,0 +1,28 @@
+.container
+
+    .container.jumbotron
+        center
+            h1
+                | Yer in the dashboard, mate!
+            
+    = link_to "Add a Beer", new_beer_path, class: "btn btn-lg btn-default pull-right"
+    
+.container
+    - if current_user.beers.size == 0
+        center
+            h3
+                | No beers have been added.  Why don't you 
+                =link_to "add one now!", new_beer_path
+    - else
+        h3
+            | Your Beers:
+            ul
+                - current_user.beers.each do |beer|
+                    .list-group-item
+                        = beer.name
+                        .text-right
+                            = beer.abv
+                            - flavors = beer.flavors
+                            - flavors.each do |f|
+                                = f.name
+                                = f.rating

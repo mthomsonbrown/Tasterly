@@ -4,8 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
     
-    def name
-      "LEROY JENKINS"
-    end
     has_many :beers
+    
+    before_create -> { self.auth_token = SecureRandom.hex }
 end
