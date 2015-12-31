@@ -11,9 +11,12 @@ Rails.application.routes.draw do
   resources :beers
   resources :flavors
   
-  namespace :api do
+  namespace :api, :defaults => {:format => :json} do
     namespace :v1 do
       resources :users, except: [:new, :edit]
+      resources :beers, except: [:new, :edit]
+      resources :flavors, except: [:new, :edit]
+      post 'sign_in' => 'users#sign_in'
     end
   end
 end
