@@ -26,3 +26,13 @@
                             - flavors.each do |f|
                                 = f.name
                                 = f.rating
+                                
+                                
+.container
+    - for user in @users
+        .user
+            p
+                strong 
+                    =h user.username
+                = link_to "Add Friend", friendships_path(:friend_id => user), :method => :post
+                .clear

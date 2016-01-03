@@ -1,9 +1,7 @@
 require 'test_helper'
 
-class BeerTest < ActiveSupport::TestCase
+class FriendshipsControllerTest < ActionController::TestCase
   test "the truth" do
     assert true
   end
-  
-  
 end

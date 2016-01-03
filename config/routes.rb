@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   
   resources :beers
   resources :flavors
+  resources :friendships
   
   namespace :api, :defaults => {:format => :json} do
     namespace :v1 do
