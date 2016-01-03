@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.2.4'
-gem 'sqlite3'
+
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -20,6 +20,8 @@ gem 'bootstrap_form'
 gem 'bootstrap-slider-rails'
 
 group :development, :test do
+  gem 'sqlite3'
+  # gem 'pg'
   gem 'byebug'
 end
 
@@ -29,3 +31,7 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor', '0.0.2'
+end
