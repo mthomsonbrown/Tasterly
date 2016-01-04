@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user!, :if => :format_html?
   before_filter :authenticate_user_from_token, :unless => :format_html?
   
+  
   def format_html?
     request.format.html?
   end
@@ -18,5 +19,9 @@ class ApplicationController < ActionController::Base
     end
       render json: { error: 'Bad Token'}, status: 401
     end
+  end
+  
+  def authenticate_admin_user!
+    redirect_to new_user_session_path unless current_user.try(:is_admin?)
   end
 end

@@ -18,6 +18,7 @@ gem 'slim-rails'
 gem 'devise'
 gem 'bootstrap_form'
 gem 'bootstrap-slider-rails'
+gem 'activeadmin', github: 'activeadmin'
 
 group :development, :test do
   gem 'byebug'

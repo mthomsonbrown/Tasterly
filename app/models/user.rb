@@ -8,4 +8,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   
     before_create -> { self.auth_token = SecureRandom.hex }
+    
+    
+    def is_admin?
+      # puts ENV['ADMIN_EMAILS'].to_s
+      self.admin
+    end
 end
