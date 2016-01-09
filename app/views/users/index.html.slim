@@ -29,11 +29,10 @@
                                 
                                 
 .container
-    - for user in @users
-        - unless user.email == current_user.email
-            .user
-                p
-                    strong 
-                        =h user.username
-                    = link_to " Add Friend", friendships_path(:friend_id => user), :method => :post
-                    .clear
+    - for friend in @friends
+        .friend
+            p
+                strong 
+                    =h friend.username
+                = link_to " Add Friend", friendships_path(:friend_id => friend), :method => :post
+                .clear

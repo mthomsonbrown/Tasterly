@@ -13,4 +13,9 @@ class User < ActiveRecord::Base
     def is_admin?
       self.admin
     end
+    
+    def self.friendable id, userFriends
+      friendable = User.where.not(id: id)
+    end
+    
 end
