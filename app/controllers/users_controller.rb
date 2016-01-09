@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def index
-    @friends = User.friendable current_user.id, current_user.friends
+    @friends = User.friendable current_user.id
   end
 end

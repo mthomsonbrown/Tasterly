@@ -14,8 +14,7 @@ class User < ActiveRecord::Base
       self.admin
     end
     
-    def self.friendable id, userFriends
-      friendable = User.where.not(id: id)
+    def self.friendable id
+      User.where.not(id: id).where.not(id: User.find(id).friends.ids)
     end
-    
 end
