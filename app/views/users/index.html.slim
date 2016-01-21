@@ -18,7 +18,7 @@
             | Your Beers:
             ul
                 - current_user.beers.each do |beer|
-                    .list-group-item
+                    .list-group-item.braveheart
                         = beer.name
                         .text-right
                             = beer.abv
@@ -27,12 +27,14 @@
                                 = f.name
                                 = f.rating
                                 
-                                
+                  
 .container
-    - for friend in @friends
-        .friend
-            p
-                strong 
-                    =h friend.username
-                = link_to " Add Friend", friendships_path(:friend_id => friend), :method => :post
-                .clear
+    h3
+        | Friends:
+        - for friend in @friends
+            .list-group-item.friend
+                p
+                    strong 
+                        =h friend.username
+                    = link_to " Add Friend", friendships_path(:friend_id => friend), :method => :post
+                    .clear

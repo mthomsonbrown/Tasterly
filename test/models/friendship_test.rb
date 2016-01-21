@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class FriendshipTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  
+  test "friendable doesn't return current user" do
+    assert true
+  end
+  
 end
