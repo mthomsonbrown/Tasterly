@@ -1,0 +1,19 @@
+h1 Listing flavor_stats
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @flavor_stats.each do |flavor_stat|
+      tr
+        td = link_to 'Show', flavor_stat
+        td = link_to 'Edit', edit_flavor_stat_path(flavor_stat)
+        td = link_to 'Destroy', flavor_stat, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Flavor stat', new_flavor_stat_path

@@ -1,0 +1,2 @@
+module FlavorStatsHelper
+end

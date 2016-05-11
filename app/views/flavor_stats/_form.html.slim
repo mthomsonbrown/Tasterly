@@ -1,0 +1,9 @@
+= form_for @flavor_stat do |f|
+  - if @flavor_stat.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@flavor_stat.errors.count, "error")} prohibited this flavor_stat from being saved:"
+      ul
+        - @flavor_stat.errors.full_messages.each do |message|
+          li = message
+
+  .actions = f.submit
