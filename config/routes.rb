@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :flavor_stats
   ActiveAdmin.routes(self)
   get 'home/index'
 

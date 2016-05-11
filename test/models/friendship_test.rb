@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class FriendshipTest < ActiveSupport::TestCase
-  
+    
   test "can't create friendship without user id" do
     assert_raises(Exception) { Friendship.create! friend_id: 1}
   end
@@ -14,8 +14,10 @@ class FriendshipTest < ActiveSupport::TestCase
     assert Friendship.create! [{ user_id: 1, friend_id: 2 }]
   end
   
-  test "default friendship status should be 'pending'" do
-    friendship = Friendship.create! [{ user_id: 1, friend_id: 2 }]
-    assert friendship.status == :pending
+  test "default friendship status should be pending" do
+    Friendship.create! [{ user_id: 1, friend_id: 2 }]
+    friendship = Friendship.find_by_user_id(1)
+    assert friendship.pending?, "Status wasn't pending, was #{friendship.status}" 
   end
+  
 end

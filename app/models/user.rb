@@ -7,18 +7,18 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
   validates :username, presence: true
     
-    before_create -> { self.auth_token = SecureRandom.hex }
-    
-    
-    def is_admin?
-      self.admin
-    end
-    
-    def self.friendable id
-      where.not(id: id).where.not(id: friend_ids(id))
-    end
-    
-    def self.friend_ids userId
-      find(userId).friends.ids
-    end
+  before_create -> { self.auth_token = SecureRandom.hex }
+  
+  
+  def is_admin?
+    self.admin
+  end
+  
+  def self.friendable id
+    where.not(id: id).where.not(id: friend_ids(id))
+  end
+  
+  def self.friend_ids userId
+    find(userId).friends.ids
+  end
 end

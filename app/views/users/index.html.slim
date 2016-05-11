@@ -23,9 +23,9 @@
                         .text-right
                             = beer.abv
                             - flavors = beer.flavors
-                            - flavors.each do |f|
-                                = f.name
-                                = f.rating
+                            - flavors.each do |flavor|
+                                = flavor.name
+                                = flavor.rating
                                 
                   
 .container
